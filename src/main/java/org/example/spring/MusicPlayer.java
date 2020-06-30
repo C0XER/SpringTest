@@ -1,6 +1,9 @@
 package org.example.spring;
 
+import java.util.List;
+
 public class MusicPlayer {
+    private List<Music> musicList;
     private Music music;
     private String name;
     private int volume;
@@ -13,6 +16,11 @@ public class MusicPlayer {
 
     public void playMusic(){
         System.out.println(music.getSong());
+    }
+    public void playAllMusic(){
+        for (Music genre : musicList){
+            System.out.println(genre.getSong());
+        }
     }
 
     public void setMusic(Music music) {
@@ -33,5 +41,13 @@ public class MusicPlayer {
 
     public void setVolume(int volume) {
         this.volume = volume;
+    }
+
+    public List<Music> getMusicList() {
+        return musicList;
+    }
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
     }
 }
