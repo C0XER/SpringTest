@@ -7,6 +7,12 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:component-scan base-package="org.example.spring"/> <!-- Конфигурация для исп аннотаций-->
+
+
+
+    <!--  Конфигурация Spring через XML файл
+
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="classicalMusicBean"
@@ -42,7 +48,7 @@
             </list>
         </property>
 
-    </bean>
+    </bean>    -->
 
 
 </beans>

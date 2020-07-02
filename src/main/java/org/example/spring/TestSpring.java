@@ -1,5 +1,6 @@
 package org.example.spring;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
@@ -16,6 +17,7 @@ public class TestSpring {
 
         context.close(); */
 
+       /*  //xml config
        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                "applicationContext.xml");
        MusicPlayer musicPlayer = context.getBean("musicPlayer",MusicPlayer.class);
@@ -36,6 +38,26 @@ public class TestSpring {
         ClassicalMusic classicalMusic1 = context.getBean("classicalMusicBean",ClassicalMusic.class);
         System.out.println(classicalMusic.getSong());
 
+        context.close();
+
+        */
+        /*
+       // annotation
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        Music classicalMusic = context.getBean("someClassics",ClassicalMusic.class);
+        Music rock = context.getBean("rockMusic",RockMusic.class);
+        System.out.println(classicalMusic.getSong());
+        MusicPlayer musicPlayer = new MusicPlayer(rock);
+        musicPlayer.playMusic();
+
+         */
+        // @Autowired
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        MusicPlayer musicPlayer = context.getBean("musicPlayer",MusicPlayer.class);
+        musicPlayer.playMusic();
+        Computer computer = context.getBean("computer",Computer.class);
+        System.out.println(computer);
         context.close();
     }
 }
